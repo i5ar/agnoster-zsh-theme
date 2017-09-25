@@ -38,6 +38,8 @@ DETACHED="\u27a6"
 CROSS="\u2718"
 LIGHTNING="\u26a1"
 GEAR="\u2699"
+PYTHON="\ue73c"
+OPENCENTRE="\u271c"
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
@@ -88,7 +90,7 @@ prompt_git() {
   if [[ -n "$ref" ]]; then
     if is_dirty; then
       color=yellow
-      ref="${ref} $PLUSMINUS"
+      ref="${ref} $OPENCENTRE "
     else
       color=green
       ref="${ref} "
@@ -125,9 +127,9 @@ prompt_status() {
 # Display current virtual environment
 prompt_virtualenv() {
   if [[ -n $VIRTUAL_ENV ]]; then
-    color=cyan
+    color=green
     prompt_segment $color $PRIMARY_FG
-    print -Pn " $(basename $VIRTUAL_ENV) "
+    print -Pn " $PYTHON $(basename $VIRTUAL_ENV) "
   fi
 }
 
@@ -136,8 +138,8 @@ prompt_agnoster_main() {
   RETVAL=$?
   CURRENT_BG='NONE'
   prompt_status
-  prompt_context
   prompt_virtualenv
+  prompt_context
   prompt_dir
   prompt_git
   prompt_end

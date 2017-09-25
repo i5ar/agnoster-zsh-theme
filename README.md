@@ -1,31 +1,38 @@
-# agnoster.zsh-theme
+# Agnoster Zsh theme
 
-A ZSH theme optimized for people who use:
+**NOTE:** This fork supports Virtual Environments!
+
+![Virtual Environments](https://github.com/i5ar/agnoster-zsh-theme/blob/master/venv.png)
+
+A Zsh theme optimized for people who use:
 
 - Solarized
 - Git
-- Unicode-compatible fonts and terminals (I use iTerm2 + Menlo)
+- Unicode-compatible fonts and terminals (I use iTerm2 + DejaVu)
 
-For Mac users, I highly recommend iTerm 2 + Solarized Dark
+For Mac users, I highly recommend iTerm 2 + Solarized Dark \
+For GNOME GNU/Linux users, I highly recommend GNOME Terminal + Solarized dark \
+For KDE GNU/Linux users, I highly recommend Konsole + [Solarized Dark](https://github.com/phiggins/konsole-colors-solarized)
 
 # Compatibility
 
-**NOTE:** In all likelihood, you will need to install a [Powerline-patched font](https://github.com/Lokaltog/powerline-fonts) for this theme to render correctly.
+**NOTE:** In all likelihood, you will need to install a [Nerd](https://github.com/ryanoasis/nerd-fonts) font for this theme to render correctly.
 
-To test if your terminal and font support it, check that all the necessary characters are supported by copying the following command to your terminal: `echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"`. The result should look like this:
+To test if your terminal and font support it, check that all the necessary characters are supported by copying the following command to your terminal: `echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699 \ue606"`. The result should look like this:
 
-![Character Example](https://gist.githubusercontent.com/agnoster/3712874/raw/characters.png)
+![Characters](https://github.com/i5ar/agnoster-zsh-theme/blob/master/chars.png)
 
 ## What does it show?
 
 - If the previous command failed (✘)
-- User @ Hostname (if user is not DEFAULT_USER, which can then be set in your profile)
+- User@Hostname (if user is not DEFAULT_USER, which can then be set in your profile)
 - Git status
   - Branch () or detached head (➦)
   - Current branch / SHA1 in detached head state
   - Dirty working directory (±, color change)
 - Working directory
 - Elevated (root) privileges (⚡)
+- Virtual Environments
 
 ![Screenshot](https://gist.githubusercontent.com/agnoster/3712874/raw/screenshot.png)
 
