@@ -31,15 +31,26 @@ if [[ -z "$PRIMARY_FG" ]]; then
 fi
 
 # Characters
-SEGMENT_SEPARATOR="\ue0b0"
-PLUSMINUS="\u00b1"
-BRANCH="\ue0a0"
-DETACHED="\u27a6"
-CROSS="\u2718"
-LIGHTNING="\u26a1"
-GEAR="\u2699"
-PYTHON="\ue73c"
-OPENCENTRE="\u271c"
+term="$(tty)"
+if [[ "$term" == *"tty"* ]]; then
+	SEGMENT_SEPARATOR=" >"
+	PLUSMINUS="±"
+	CROSS="×"
+	BRANCH="µ"
+	DETACHED="ƒ"
+	LIGHTNING="!"
+	GEAR="*"
+	PYTHON="(venv)"
+else
+	SEGMENT_SEPARATOR="\ue0b0"
+	PLUSMINUS="\u271c"
+	CROSS="\u2718"
+	BRANCH="\ue0a0"
+	DETACHED="\u27a6"
+	LIGHTNING="\u26a1"
+	GEAR="\u2699"
+	PYTHON="\ue73c"
+fi
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
@@ -90,7 +101,7 @@ prompt_git() {
   if [[ -n "$ref" ]]; then
     if is_dirty; then
       color=yellow
-      ref="${ref} $OPENCENTRE "
+      ref="${ref} $PLUSMINUS "
     else
       color=green
       ref="${ref} "
